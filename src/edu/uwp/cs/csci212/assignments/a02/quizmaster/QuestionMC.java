@@ -47,8 +47,8 @@ public class QuestionMC extends Question {
      * Accessor: returns answer
      * @return answer
      */
-    public char getAnswer() {
-        return answer;
+    public String getAnswer() {
+        return answer + "";
     }
 
     /**
@@ -65,10 +65,10 @@ public class QuestionMC extends Question {
      */
     @Override
     public String toString() {
-        return "QuestionMC{" +
-                "question=" + getText() +
-                "answer=" + answer +
-                "points=" + getPoints() +
+        return "QuestionMC{ " +
+                " question= " + getText() +
+                " answer= " + answer +
+                " points= " + getPoints() +
                 '}';
     }
 }

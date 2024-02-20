@@ -7,7 +7,7 @@ package edu.uwp.cs.csci212.assignments.a02.quizmaster;
  * @edu.uwp.cs.242.assignment 2
  * @bugs none
  */
-public class Question {
+public abstract class Question {
 
     /*
      * int: point value of question
@@ -55,6 +55,8 @@ public class Question {
     public String getText() {
         return text;
     }
+
+    public abstract String getAnswer();
 
     /**
      * Mutator: sets point value for question

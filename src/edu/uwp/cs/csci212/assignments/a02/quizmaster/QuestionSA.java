@@ -64,10 +64,10 @@ public class QuestionSA extends Question{
      */
     @Override
     public String toString() {
-        return "QuestionSA{" +
-                "question='" + getText() +
-                "answer='" + answer +
-                "points=" + getPoints() +
+        return " QuestionSA{ " +
+                " question='" + getText() +
+                " answer=' " + answer +
+                " points= " + getPoints() +
                 '}';
     }
 }

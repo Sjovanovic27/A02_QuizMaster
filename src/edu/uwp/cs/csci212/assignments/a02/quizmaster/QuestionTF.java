@@ -47,9 +47,9 @@ public class QuestionTF extends Question {
      *
      * @return answer
      */
-    public boolean getAnswer() {
+    public String getAnswer() {
 
-        return answer;
+        return answer + "";
     }
 
     /**
@@ -68,9 +68,9 @@ public class QuestionTF extends Question {
     @Override
     public String toString() {
         return "QuestionTF{" +
-                "question=" + getText() +
-                "answer=" + answer +
-                "points=" + getPoints() +
+                " question= " + getText() +
+                " answer= " + answer +
+                " points= " + getPoints() +
                 '}';
     }
 }

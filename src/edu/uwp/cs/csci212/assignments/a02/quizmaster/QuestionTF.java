@@ -43,7 +43,7 @@ public class QuestionTF extends Question {
     }
 
     /**
-     * Accessor: returns answer
+     * Accessor: returns answer as String
      *
      * @return answer
      */

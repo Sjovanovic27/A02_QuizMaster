@@ -56,6 +56,14 @@ public abstract class Question {
         return text;
     }
 
+    /**
+     * Abstract method so that I can call getAnswer() while referring to any Question instance
+     * while the constructors of each of the question types use different variables to represent
+     * their 'answer' variable, (char, string, boolean), they each have to be converted to string
+     * before returning their value. While not super clean, this works perfectly, and makes comparing
+     * the answer the player gives and the actual answer a one line ordeal using equalsIgnoreCase()
+     * @return String answer
+     */
     public abstract String getAnswer();
 
     /**

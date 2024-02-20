@@ -44,7 +44,7 @@ public class QuestionMC extends Question {
     }
 
     /**
-     * Accessor: returns answer
+     * Accessor: returns answer as String
      * @return answer
      */
     public String getAnswer() {

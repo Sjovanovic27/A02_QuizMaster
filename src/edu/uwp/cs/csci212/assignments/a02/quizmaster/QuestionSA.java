@@ -43,7 +43,7 @@ public class QuestionSA extends Question{
     }
 
     /**
-     * Accessor: gets answer
+     * Accessor: gets answer as String
      * @return answer
      */
     public String getAnswer() {

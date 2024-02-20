@@ -65,7 +65,7 @@ public class FileInOut {
      */
 
 
-    public FileInOut(String inpFile, String outFile, boolean isOpen) throws Exception {
+    public FileInOut(String inpFile, String outFile, boolean isOpen) {
         boolean canContinue = true;
         this.outFilename = outFile;
         this.inFilename = inpFile;
@@ -81,7 +81,13 @@ public class FileInOut {
                     prompt();
                 }
             }
-            printer = new PrintWriter(outFile);
+
+            try {
+                printer = new PrintWriter(outFile);
+            } catch (Exception e) {
+                System.exit(1);
+            }
+
         } else {
             System.out.println("boolean isOpen is defined false in constructor, files therefore do not have read/write privileges");
             System.exit(1);

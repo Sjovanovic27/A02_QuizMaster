@@ -1,6 +1,8 @@
 package edu.uwp.cs.csci212.assignments.a02.quizmaster;
 
+
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -10,16 +12,26 @@ import java.util.Scanner;
  * @edu.uwp.cs.242.assignment 2
  * @bugs none
  */
+
+/*
+<Player’s first name>
+<Player’s last name>
+<Number of questions in this file>
+<Question type: TF | SA> <Question point value>
+<Question text>
+<Question answer>
+ */
+
 public class QuizMaster {
 
     /*
-     * ArrayList containing all of the Question objects
+     * ArrayList containing all the Question objects
      */
-    private ArrayList questionDb;
+    private static ArrayList<Question> questionDb;
     /*
      * Player object
      */
-    private Player player;
+    private static Player player;
 
     /**
      * Gets the answer to the parameter question object
@@ -27,21 +39,82 @@ public class QuizMaster {
      * @return answer to question
      * @throws ClassNotFoundException
      */
-    public String getAnswer(Question q) throws ClassNotFoundException {
+    private static String getAnswer(Question q) throws ClassNotFoundException {
         return switch (q) {
             case QuestionTF questionTF -> String.valueOf((questionTF.getAnswer()));
             case QuestionMC questionMC -> String.valueOf(questionMC.getAnswer());
             case QuestionSA questionSA -> questionSA.getAnswer();
-            case null, default -> throw new ClassNotFoundException("Question object is not valid");
+            case null, default -> throw new ClassNotFoundException("Question object is invalid");
         };
     }
 
-    public void readPlayer(Scanner fileIn) {
+    private static void readPlayer(Scanner fileIn) {
         player = new Player(fileIn.next(), fileIn.next());
     }
 
-    public void readQuestionMC(Scanner inFile, int points) {
+    private static void readQuestionMC(Scanner inFile, int points) {
+        String question = inFile.nextLine();
+        int numOfChoices = inFile.nextInt();
+        String answers = "\n";
+
+        for(int i = 65; i < numOfChoices + 65; i++) {
+            answers += "(" + 'i' + ") " + inFile.nextLine() + "\n";
+        }
+        questionDb.add(new QuestionMC(points, question + answers, inFile.next().charAt(0)));
         
     }
+    private static void readQuestionTF(Scanner inFile, int points) {
+        questionDb.add(new QuestionTF(points, inFile.nextLine(), inFile.nextBoolean()));
+    }
 
+    private static void readQuestionSA(Scanner inFile, int points) {
+        questionDb.add(new QuestionSA(points, inFile.nextLine(), inFile.nextLine()));
+    }
+    private static void readQuestionsDb(Scanner inFile) {
+        while(inFile.hasNext()) {
+            String next = inFile.next();
+            int points = inFile.nextInt();
+
+            switch (next) {
+                case "MC":
+                    readQuestionMC(inFile, points);
+                    break;
+                case "SA":
+                    readQuestionSA(inFile, points);
+                    break;
+                case "TF":
+                    readQuestionTF(inFile, points);
+                    break;
+                default:
+                    throw new InputMismatchException("File was not read correctly");
+            }
+        }
+    }
+
+    private static void play(Scanner input) {
+        System.out.println("***** QuizMaster *****\n");
+
+            System.out.print("Please enter the name of the file containing the data: ");
+            String filename = input.next();
+
+            /*
+             Because I'm the BEST, the FileInOut constructor will deal with all exceptions, and will prompt
+             the user to re-input the filename in the event that it is incorrect
+             */
+
+            FileInOut game = new FileInOut(filename, "default.txt", true);
+
+            readQuestionsDb(game.getInFile());
+
+            for(Object o; questionDb) {
+                System.out.println(o);
+            }
+
+
+
+    }
+
+    public static void main(String[] args) {
+
+    }
 }

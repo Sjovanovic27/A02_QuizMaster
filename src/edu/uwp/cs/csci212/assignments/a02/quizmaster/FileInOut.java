@@ -10,7 +10,7 @@ import java.util.Scanner;
  * File modification class; Uses Scanner and PrintWriter objects to read
  * from input text files, and write to a desired text file.
  * <p>
- * Very rudamentary, (Also likely incorrect honestly) but works as intended
+ * Very rudimentary, (Also likely incorrect honestly) but works as intended
  *
  * @author Stevan Jovanovic
  * @edu.uwp.cs.242.course CSCI 242 - Computer Science II

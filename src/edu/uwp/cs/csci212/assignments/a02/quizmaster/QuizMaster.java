@@ -7,6 +7,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * This class is the master class that prompts the quiz game.
+ * <p>
+ * All formatting, prompting, and reading of the player's answers go through this class,
+ * and the text file that contains the questions and answers is read in this class.
+ * </p>
  * @author Stevan Jovanovic (jovanovi)
  * @edu.uwp.cs.242.course CSCI 242 - Computer Science II
  * @edu.uwp.cs.242.section 001

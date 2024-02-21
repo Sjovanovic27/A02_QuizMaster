@@ -1,6 +1,13 @@
 package edu.uwp.cs.csci212.assignments.a02.quizmaster;
 
 /**
+ * QuestionMC is an extension of Question, and encapsulate questions that
+ * have multiple choice answers in the form (A), (B), (C), (D).
+ *
+ * The entire question including the multiple choice answers are included
+ * in the 'text' parameter in the constructor, which makes the display of the
+ * question to the console much simpler.
+ *
  * @author Stevan Jovanovic (jovanovi)
  * @edu.uwp.cs.242.course CSCI 242 - Computer Science II
  * @edu.uwp.cs.242.section 001

@@ -1,6 +1,12 @@
 package edu.uwp.cs.csci212.assignments.a02.quizmaster;
 
 /**
+ * Question is an abstract class used for all other Question objects, and contains
+ * the accessor and mutator methods for points and actual question contents.
+ * The only abstract method is the getAnswer(), and it returns a string to make it
+ * easier to check the correct answer. (All other classes are cast to return
+ * a String variable for this method).
+ *
  * @author Stevan Jovanovic (jovanovi)
  * @edu.uwp.cs.242.course CSCI 242 - Computer Science II
  * @edu.uwp.cs.242.section 001

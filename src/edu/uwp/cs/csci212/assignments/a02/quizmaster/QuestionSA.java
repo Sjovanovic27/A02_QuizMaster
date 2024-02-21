@@ -1,7 +1,8 @@
 package edu.uwp.cs.csci212.assignments.a02.quizmaster;
 
 /**
- *
+ * QuestionSA is an extension of Question, and encapsulate questions that have
+ * one word answers.
  *
  * @author Stevan Jovanovic (jovanovi)
  * @edu.uwp.cs.242.course CSCI 242 - Computer Science II

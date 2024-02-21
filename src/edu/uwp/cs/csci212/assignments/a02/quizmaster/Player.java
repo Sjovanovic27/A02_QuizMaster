@@ -1,6 +1,11 @@
 package edu.uwp.cs.csci212.assignments.a02.quizmaster;
 
 /**
+ * This class represents a player object, which has a name and score.
+ * The player's name is read in the text file, and displayed at the beginning
+ * of the game. Points are awarded to each player object depending on the value
+ * of the question.
+ *
  * @author Stevan Jovanovic (jovanovi)
  * @edu.uwp.cs.242.course CSCI 242 - Computer Science II
  * @edu.uwp.cs.242.section 001

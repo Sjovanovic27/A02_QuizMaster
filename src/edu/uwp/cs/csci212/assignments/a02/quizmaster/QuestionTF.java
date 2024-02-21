@@ -1,6 +1,9 @@
 package edu.uwp.cs.csci212.assignments.a02.quizmaster;
 
 /**
+ * QuestionTF is an extension of Question, and encapsulates Questions that
+ * have true/false answers.
+ *
  * @author Stevan Jovanovic (jovanovi)
  * @edu.uwp.cs.242.course CSCI 242 - Computer Science II
  * @edu.uwp.cs.242.section 001
